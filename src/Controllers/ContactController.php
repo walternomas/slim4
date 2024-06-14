@@ -12,7 +12,7 @@ class ContactController
         $view = Twig::fromRequest($request);
         $data = [
             'title' => 'Contact Page',
-            'h1' => 'Contact Me!'
+            'category' => 'contact'
         ];
 
         return $view->render($response, "contact.html", $data);

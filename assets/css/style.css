@@ -20,7 +20,7 @@ main {
     border: 1px solid #ededed;
 }
 
-header nav a.actual {
+header nav a.active {
     color: white;
     background: black;
 }
