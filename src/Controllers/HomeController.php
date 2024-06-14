@@ -12,7 +12,7 @@ class HomeController
         $view = Twig::fromRequest($request);
         $data = [
             'title' => 'Principal Site',
-            'h1' => 'Welcome Home!'
+            'category' => 'home'
         ];
 
         return $view->render($response, "index.html", $data);
