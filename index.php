@@ -1,21 +1,17 @@
 <?php
 
-use Psr\Http\Message\ResponseInterface as Response;
-use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Factory\AppFactory;
+use App\Controllers\ContactController;
+use App\Controllers\BlogController as Blog;
 
 require __DIR__ . "/vendor/autoload.php";
 
 $app = AppFactory::create();
 
-$app->get('/', function (Request $request, Response $response, array $args) {
-    $response->getBody()->write("Hello World!");
-    return $response;
-});
+$app->get('/', 'App\Controllers\HomeController:index');
 
-$app->get('/contact', function (Request $request, Response $response, array $args) {
-   $response->getBody()->write("Contact!");
-   return $response;
-});
+$app->get('/contact', ContactController::class . ':index');
+
+$app->get('/blog', Blog::class . ':index');
 
 $app->run();
